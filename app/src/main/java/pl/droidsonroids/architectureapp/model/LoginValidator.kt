@@ -1,5 +1,7 @@
 package pl.droidsonroids.architectureapp.model
 
+import android.support.annotation.VisibleForTesting
+
 interface Validator {
     fun areCredentialsValid(login: String, password: String): Boolean
 }
@@ -12,12 +14,14 @@ class LoginValidator : Validator {
     override fun areCredentialsValid(login: String, password: String): Boolean
             = isLoginValid(login) && isPasswordValid(password)
 
+    @VisibleForTesting
     private fun isLoginValid(login: String): Boolean {
         val trimmedLogin = login.trim()
         return trimmedLogin.length >= MIN_LOGIN_LENGTH &&
                 trimmedLogin.none { char: Char -> char.isWhitespace() || char.isDigit() }
     }
 
+    @VisibleForTesting
     private fun isPasswordValid(password: String): Boolean {
         val trimmedPassword = password.trim()
         return trimmedPassword.length >= MIN_PASSWORD_LENGTH &&
