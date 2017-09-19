@@ -11,7 +11,7 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
 
-    val fizzBuzz = FizzBuzz()
+    private val fizzBuzz = FizzBuzz()
 
     @Test
     fun returnOneWhenGetOne() {
