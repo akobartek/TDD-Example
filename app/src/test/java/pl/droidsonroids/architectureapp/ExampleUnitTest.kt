@@ -11,27 +11,40 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
 
+    val fizzBuzz = FizzBuzz()
+
     @Test
     fun returnOneWhenGetOne() {
-        val fizzBuzz = FizzBuzz()
-        val actualValue = fizzBuzz.getNumber(1)
+        val actualValue = fizzBuzz.getMsg(1)
 
-        assertEquals(1, actualValue)
+        assertEquals(1.toString(), actualValue)
     }
 
     @Test
     fun returnTwoWhenGetTwo() {
-        val fizzBuzz = FizzBuzz()
-        val actualValue = fizzBuzz.getNumber(2)
+        val actualValue = fizzBuzz.getMsg(2)
 
-        assertEquals(2, actualValue)
+        assertEquals(2.toString(), actualValue)
     }
 
     @Test
-    fun returnThreeWhenGetThree() {
-        val fizzBuzz = FizzBuzz()
-        val actualValue = fizzBuzz.getNumber(3)
+    fun returnFizzWhenGetThree() {
+        val actualValue = fizzBuzz.getMsg(3)
 
         assertEquals("Fizz", actualValue)
+    }
+
+    @Test
+    fun returnBuzzWhenGet5() {
+        val actualValue = fizzBuzz.getMsg(5)
+
+        assertEquals("Buzz", actualValue)
+    }
+
+    @Test
+    fun returnFizzBuzzWhenGet15() {
+        val actualValue = fizzBuzz.getMsg(15)
+
+        assertEquals("FizzBuzz", actualValue)
     }
 }
