@@ -2,15 +2,10 @@ package pl.droidsonroids.architectureapp
 
 class FizzBuzz {
 
-    fun getMsg(value: Int): String {
-        if (value % 15 == 0)
-            return "FizzBuzz"
-        else if (value % 3 == 0)
-            return "Fizz"
-        else if (value % 5 == 0)
-            return "Buzz"
-        return value.toString()
+    fun getMsg(value: Int): String = when {
+        value % 15 == 0 -> "FizzBuzz"
+        value % 5 == 0 -> "Buzz"
+        value % 3 == 0 -> "Fizz"
+        else -> value.toString()
     }
-
-
 }
